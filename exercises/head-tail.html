@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button onclick="
+    playGame('heads');
+  ">heads</button>
+
+  <button onclick="
+    playGame('tails');
+  ">tails</button>
+
+  <button onclick="
+    score.wins = 0;
+    score.losses = 0;
+    localStorage.removeItem('score');
+  ">Reset Score</button>
+
+  <script>
+    const score = JSON.parse(localStorage.getItem('score'));
+
+    if (!score) {
+      score = {
+        wins: 0,
+        losses: 0
+      };
+    }
+
+    function playGame(guess) {
+      const computerMove = Math.random();
+
+      let result = '';
+
+      if (computerMove < 0.5) {
+        result = 'heads';
+      } else {
+        result = 'tails';
+      }
+
+      if (guess === result) {
+        total = 'You win!';
+      } else {
+        total = 'You lose!';
+      }
+      
+      if (total === 'You win!') {
+        score.wins += 1;
+      } else {
+        score.losses += 1;
+      }
+      
+      localStorage.setItem('score', JSON.stringify(score));
+
+      alert(`Wins: ${score.wins}, Losses: ${score.losses}`);
+    }
+    
+  </script>
+</body>
+</html>

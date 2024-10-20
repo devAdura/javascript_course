@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 6a</title>
+</head>
+<body>
+  <script>
+    const hour = 19;
+
+    const name = 'Aduragbemi';
+
+    if (hour >= 0.00 && hour < 12) {
+      console.log(`Good morning! ${name}`);
+    } else if (hour >= 12 && hour <= 16) {
+      console.log(`Good afternoon! ${name}`);
+    } else {
+      console.log(`Goodnight! ${name}`);
+    }
+
+    const age = 65;
+
+    const isHoliday = true;
+
+    if ((age <= 6 || age >= 65) && !isHoliday) {
+      console.log('Discount');
+    } else {
+      console.log('No discount');
+    }
+  </script>
+</body>
+</html>

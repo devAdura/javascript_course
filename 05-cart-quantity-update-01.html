@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart Quantity</title>
+  </head>
+  <body>
+    <button onclick="
+      cartQuantity2();      
+      ">Show Quantity</button>
+
+    <button onclick="
+      cartQuantity ++;
+      cartQuantity2();
+    ">Add to Cart</button>
+
+    <button onclick="
+      cartQuantity += 2;
+      cartQuantity2();
+      ">+2</button>
+
+    <button onclick="
+      cartQuantity += 3;
+      cartQuantity2();
+    ">+3</button>
+
+    <button onclick="
+      cartQuantity += 4;
+      cartQuantity2();
+      ">+4</button>
+
+    <button onclick="
+      cartQuantity += 5;
+      cartQuantity2();
+    ">+5</button>
+
+    <button onclick="
+    cartQuantity --;
+    cartQuantity2();
+    ">Remove from Cart</button>
+
+    <button onclick="
+    cartQuantity -= 2;
+    cartQuantity2();
+    ">-2</button>
+
+    <button onclick="
+    cartQuantity -= 3;
+    cartQuantity2();
+    ">-3</button>
+
+    <button onclick="
+      cartQuantity = 0;
+      cartQuantity2();
+      ">Reset Cart</button>
+      
+    <p class="cart-paragraph"></p>
+
+    <script>
+      let cartQuantity = 0;
+
+      function cartQuantity2()  {
+        if (cartQuantity > 10)  {
+          alert(`Cart is full`);
+          return;
+        }
+
+        if (cartQuantity < 0) {
+          alert(`Not enough items in the cart`);
+          return;
+        }
+      
+      document.querySelector('.cart-paragraph').innerHTML = `Cart quantity: ${cartQuantity}`;
+    }
+                
+    </script>
+</body>
+</html>

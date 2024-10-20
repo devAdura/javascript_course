@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise-10</title>
+  <style>
+    .cart-add-button {
+      background-color: rgb(255, 216, 20);
+      color: rgb(0, 0, 0);
+      border: none;
+      border-radius: 60px;
+      padding: 8px;
+      width: 120px;
+    }
+
+    .uber-button-1 {
+      background-color: rgb(0, 0, 0);
+      color: white;
+      font-weight: bold;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      width: 120px;
+      height: 40px;
+    }
+
+    .uber-button-2 {
+      background-color: rgb(230, 230, 230);
+      color: black;
+      font-weight: bold;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      width: 140px;
+      height: 40px;
+    }
+
+    .js-toggled {
+      border: none;
+      background-color: rgb(240, 240, 240);
+      color: black;
+    }
+
+    .is-toggled {
+      
+      background-color: black;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <button class="cart-add-button">Add to Cart</button>
+  <p></p>
+  <button class="uber-button-1">Request now</button>
+  <button class="uber-button-2">Schedule for later</button>
+  <button class="js-button">Test</button>
+  <p></p>
+
+  <button onclick="
+  const toggled = document.querySelector('.js-toggled');
+
+  if (toggled.innerHTML === 'Gaming') {
+    toggled.classList.add('is-toggled');   
+  } else {
+    toggled.classList.remove('is-toggled');
+  }
+  if (classList.contains('is-toggled'));
+  " class="js-toggled">Gaming</button>
+
+  <script>
+    const jsButton = document.querySelector('.js-button');
+    console.log(jsButton.classList.contains('js-button'));
+  </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>9d</title>
+</head>
+<body>
+  <input placeholder="Input your name" class="js-input" onkeydown="
+    forKey();
+    ">
+  <button onclick="
+    theInput();
+  ">Submit</button>
+  <p class="js-display"></p>
+
+  <script>
+    function forKey() {
+      if (event.key === 'Enter') {
+        theInput(); 
+      }
+    }
+
+    function theInput() {
+      const inputElement = document.querySelector('.js-input');
+      let theValue = inputElement.value;
+      document.querySelector('.js-display').innerHTML = `Your name is: ${theValue}`;
+    }
+  </script>
+</body>
+</html>

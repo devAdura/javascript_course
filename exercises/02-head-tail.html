@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+<style>
+  p {
+    font-size: 20px;
+  }
+  button {
+    height: 50px;
+    width: 120px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    border: none;
+    font-size: 20px;
+  }
+ 
+  
+</style>
+  <body>
+    <button onclick="
+      playGame('heads');
+      ">heads</button>
+    
+    <button onclick="
+      playGame('tails');
+      ">tails</button>
+    <p class="js-moves"></p>
+    <p class="js-display"></p>
+    
+    <button onclick="
+      score.wins = 0;
+      score.losses = 0;
+      localStorage.removeItem('score');
+      scoreUpdate();
+      ">Reset Score</button>
+    <script>
+    const score = JSON.parse(localStorage.getItem('score'))
+    || {
+      wins: 0,
+      losses: 0
+    };
+    
+    scoreUpdate();
+    
+    function scoreUpdate() {
+      document.querySelector('.js-display').innerHTML = 
+    `Wins: ${score.wins}, Losses: ${score.losses}`;
+    }
+    
+    function move1() {
+      document.querySelector('.js-moves').innerHTML = 'Wow! You guessed right. You Win!';
+    }
+    function move2() {
+      document.querySelector('.js-moves').innerHTML = 'Oops! Your guess is Incorrect. You Lose!';
+    }
+    
+    function playGame(playerGuess) {
+      const computerMove = Math.random();
+      
+      let result = '';
+      
+      if (computerMove < 0.5) {
+        result = 'heads';
+      } else {
+        result = 'tails';
+      }
+      
+      let outcome = '';
+        
+      if (playerGuess === result) {
+        outcome = 'You win!';
+      } else {
+        outcome = 'You lose!';
+      }
+      
+      if (outcome === 'You win!') {
+        move1();
+        score.wins += 1;
+      } else {
+        move2();
+        score.losses += 1;
+      }
+        localStorage.setItem('score', JSON.stringify(score));
+      
+        scoreUpdate();
+        //alert(`Wins: ${score.wins}, Losses: ${score.losses}`);
+    }
+    </script>
+  </body>
+</html>
